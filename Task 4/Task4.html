@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Ordnance — Seven machines of the 20th century</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Task4.css">
+    <style>
+        @layer base {
+            html { scrollbar-color: var(--smoke) transparent; accent-color: var(--signal); }
+        }
+    </style>
+</head>
+<body>
+
+<input type="checkbox" id="neg" class="sr">
+
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+        <filter id="liquid" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="2" seed="4" result="noise">
+                <animate attributeName="baseFrequency" dur="22s" values="0.009 0.013;0.014 0.008;0.009 0.013" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="110" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur"/>
+            <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -12"/>
+        </filter>
+    </defs>
+    <symbol id="m1911" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><rect x="92" y="40" width="216" height="28" rx="3"/><rect x="306" y="46" width="8" height="14"/>
+<path d="M92 44 L76 36 L78 50 L92 54 Z"/><path d="M104 66 H178 L170 84 L154 134 H100 Q90 134 92 124 L100 84 L86 70 Z"/>
+<path d="M200 68 H304 V78 H200 Z"/><path d="M176 72 Q178 96 200 96 Q214 96 214 72" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/><rect x="190" y="72" width="5" height="14"/>
+<rect x="108" y="84" width="46" height="40" rx="6" style="fill:var(--cut,#000)" opacity=".35"/>
+<rect x="104" y="46" width="3" height="16" style="fill:var(--cut,#000)"/><rect x="112" y="46" width="3" height="16" style="fill:var(--cut,#000)"/><rect x="120" y="46" width="3" height="16" style="fill:var(--cut,#000)"/><rect x="128" y="46" width="3" height="16" style="fill:var(--cut,#000)"/></g></symbol>
+<symbol id="ak47" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><path d="M8 54 L96 50 L98 72 L26 94 Q12 96 10 86 Z"/><rect x="96" y="46" width="124" height="26" rx="2"/>
+<path d="M104 47 Q150 38 218 44 L218 48 Z"/><path d="M150 72 H168 L162 108 Q160 112 154 111 L142 108 Z"/>
+<path d="M184 72 H208 Q214 96 232 116 L212 126 Q194 104 184 80 Z"/><path d="M166 74 Q168 90 180 90" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/>
+<rect x="220" y="50" width="62" height="20" rx="3"/><rect x="220" y="40" width="80" height="8" rx="3"/>
+<rect x="282" y="54" width="86" height="7"/><rect x="348" y="40" width="7" height="16"/><rect x="366" y="52" width="16" height="11" rx="2"/>
+<rect x="208" y="36" width="10" height="10"/><rect x="108" y="58" width="64" height="3" style="fill:var(--cut,#000)"/>
+<rect x="232" y="56" width="3" height="9" style="fill:var(--cut,#000)"/><rect x="242" y="56" width="3" height="9" style="fill:var(--cut,#000)"/><rect x="252" y="56" width="3" height="9" style="fill:var(--cut,#000)"/></g></symbol>
+<symbol id="r870" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><path d="M8 58 L100 48 V74 L30 98 Q14 100 10 90 Z"/><rect x="100" y="46" width="96" height="26" rx="4"/>
+<path d="M146 74 Q148 92 166 92 H176" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/><rect x="196" y="48" width="190" height="9" rx="3"/><rect x="196" y="60" width="160" height="9" rx="3"/>
+<rect x="232" y="56" width="74" height="18" rx="6"/><circle cx="382" cy="45" r="3"/><rect x="112" y="54" width="40" height="8" rx="2" style="fill:var(--cut,#000)"/>
+<rect x="242" y="61" width="54" height="2" style="fill:var(--cut,#000)"/><rect x="242" y="66" width="54" height="2" style="fill:var(--cut,#000)"/></g></symbol>
+<symbol id="mp5" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><path d="M14 50 H42 V86 H14 Z M42 55 H96 V61 H42 Z M42 76 H96 V81 H42 Z"/><rect x="92" y="44" width="170" height="24" rx="11"/>
+<circle cx="114" cy="38" r="8"/><rect x="244" y="28" width="12" height="16" rx="2"/>
+<path d="M128 68 H146 L140 104 Q138 108 132 107 L122 104 Z"/><path d="M178 68 H194 Q198 90 214 108 L200 116 Q184 96 178 76 Z"/>
+<path d="M146 70 Q148 88 164 88" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/><rect x="216" y="64" width="60" height="18" rx="8"/><rect x="262" y="50" width="40" height="8"/>
+<rect x="298" y="46" width="12" height="16" rx="3"/><rect x="120" y="54" width="100" height="3" style="fill:var(--cut,#000)"/></g></symbol>
+<symbol id="g17" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><rect x="86" y="38" width="236" height="32" rx="6"/><rect x="200" y="68" width="116" height="12" rx="3"/>
+<path d="M106 66 H184 L176 86 L166 136 H112 Q100 136 102 126 L106 92 L96 72 Z"/>
+<path d="M184 78 L186 98 Q188 104 196 104 H214 Q222 104 222 96 V80" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/><rect x="192" y="80" width="5" height="14"/>
+<rect x="198" y="42" width="44" height="10" rx="2" style="fill:var(--cut,#000)"/><rect x="96" y="44" width="3" height="20" style="fill:var(--cut,#000)"/><rect x="104" y="44" width="3" height="20" style="fill:var(--cut,#000)"/><rect x="112" y="44" width="3" height="20" style="fill:var(--cut,#000)"/></g></symbol>
+<symbol id="m82" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><path d="M6 46 H30 V92 H6 Z"/><path d="M30 52 H82 L84 76 L30 86 Z"/><rect x="28" y="86" width="6" height="22"/>
+<rect x="80" y="42" width="170" height="30" rx="3"/><rect x="114" y="20" width="92" height="12" rx="6"/>
+<rect x="100" y="15" width="20" height="22" rx="5"/><rect x="200" y="12" width="26" height="26" rx="6"/>
+<rect x="140" y="32" width="8" height="10"/><rect x="176" y="32" width="8" height="10"/>
+<path d="M112 72 H128 L124 102 Q122 106 116 105 L106 102 Z"/><rect x="150" y="72" width="30" height="28" rx="2"/>
+<rect x="250" y="50" width="104" height="10"/><rect x="350" y="42" width="38" height="26" rx="3"/>
+<rect x="358" y="48" width="4" height="14" style="fill:var(--cut,#000)"/><rect x="368" y="48" width="4" height="14" style="fill:var(--cut,#000)"/><rect x="378" y="48" width="4" height="14" style="fill:var(--cut,#000)"/>
+<path d="M246 60 L226 118 H232 L252 62 Z M252 60 L276 118 H282 L258 62 Z"/></g></symbol>
+<symbol id="m4" viewBox="0 0 400 140"><g style="fill:var(--fill,currentColor);stroke:var(--stroke,none);stroke-width:1.5"><path d="M10 52 H74 V80 L22 84 Q12 84 12 76 Z"/><rect x="74" y="56" width="30" height="12"/><rect x="104" y="46" width="110" height="26" rx="2"/>
+<path d="M118 46 V36 H174 V46 Z"/><rect x="112" y="30" width="70" height="7" rx="2"/>
+<path d="M142 72 H160 L154 108 Q152 112 146 112 L134 110 Z"/><path d="M176 72 H200 L206 116 L184 118 Z"/>
+<path d="M158 74 Q160 90 174 90" style="fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round"/><rect x="214" y="46" width="78" height="24" rx="4"/>
+<path d="M270 46 L276 26 H284 L288 46 Z"/><rect x="292" y="55" width="72" height="7"/><rect x="362" y="52" width="18" height="12" rx="2"/>
+<rect x="224" y="52" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/><rect x="238" y="52" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/><rect x="252" y="52" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/><rect x="224" y="60" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/><rect x="238" y="60" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/><rect x="252" y="60" width="8" height="4" rx="2" style="fill:var(--cut,#000)"/></g></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+    <a href="#top" class="mark">Ordnance</a>
+    <ul>
+        <li><a class="link" href="#collection" data-text="Collection"><span>Collection</span></a></li>
+        <li><a class="link" href="#scale" data-text="Scale"><span>Scale</span></a></li>
+        <li><a class="link" href="#index" data-text="Index"><span>Index</span></a></li>
+    </ul>
+    <label for="neg" class="neg-switch"><span class="knob"></span><span class="neg-text">Negative</span></label>
+</header>
+
+<main id="top">
+
+    <section class="hero">
+        <div class="liquid" aria-hidden="true"></div>
+
+        <div class="hero-meta">
+            <p>Seven machines that shaped the twentieth century.</p>
+        </div>
+        <p class="hero-side label">Exhibit 01<br>1911 – 1994</p>
+
+        <h1 class="hero-word w1">Ord</h1>
+        <p class="hero-word w2" aria-hidden="true">nance</p>
+
+        <figure class="hero-figure"><svg viewBox="0 0 400 140" role="img" aria-label="Kalashnikov AK-47 silhouette"><use href="#ak47"/></svg></figure>
+
+        <div class="trail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="hero-foot">
+            <p>A design archive of firearms that changed how armies, police forces and manufacturers worked, from Browning's 1911 to the M4. Move across the page to paint through it.</p>
+            <span class="scroll-cue label"><i></i>Scroll to enter</span>
+        </div>
+    </section>
+
+    <section class="band" aria-label="Makers">
+        <div class="band-row"><span>Colt</span><span>Kalashnikov</span><span>Remington</span><span>Heckler &amp; Koch</span><span>Glock</span><span>Barrett</span><span>Colt</span><span>Kalashnikov</span></div>
+        <div class="band-row outline"><span>United States</span><span>Soviet Union</span><span>West Germany</span><span>Austria</span><span>United States</span><span>Soviet Union</span></div>
+    </section>
+
+    <section class="statement">
+        <span class="label">Curator's note</span>
+        <p>Each object here outlived the problem it was built to solve. What remains is design: proportion, material and the decisions of a handful of engineers.</p>
+    </section>
+
+    <section class="gallery" id="collection">
+        <div class="gallery-sticky">
+            <div class="track">
+                <div class="track-intro">
+                    <span class="label">The collection, in order of introduction</span>
+                    <h2>Seven objects, eighty-three years.</h2>
+                    <p>Filter by type, hover to bring a piece forward, open one to take it apart.</p>
+                    <div class="chips" role="radiogroup" aria-label="Filter by type"><input type="radio" name="kind" id="f-all" class="sr" checked><label for="f-all" class="chip">All</label><input type="radio" name="kind" id="f-pistol" class="sr" ><label for="f-pistol" class="chip">Pistols</label><input type="radio" name="kind" id="f-rifle" class="sr" ><label for="f-rifle" class="chip">Rifles</label><input type="radio" name="kind" id="f-smg" class="sr" ><label for="f-smg" class="chip">Submachine guns</label><input type="radio" name="kind" id="f-shotgun" class="sr" ><label for="f-shotgun" class="chip">Shotguns</label></div>
+                </div>
+            <article class="piece" data-year="1911" data-kind="pistol">
+                <div class="piece-top">
+                    <h3>Colt M1911</h3>
+                    <span class="label">John Browning, United States</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Colt M1911 silhouette"><use href="#m1911"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>.45 ACP</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈1.1 kg</dd></div>
+                        <div><dt>Action</dt><dd>Recoil-operated semi-auto</dd></div>
+                    </dl>
+                    <p class="note">Adopted by the U.S. Army in 1911 and kept as its standard sidearm until 1985, more than seventy years in service.</p>
+                    <a class="inspect" href="#x-m1911"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1947" data-kind="rifle">
+                <div class="piece-top">
+                    <h3>Kalashnikov AK‑47</h3>
+                    <span class="label">Mikhail Kalashnikov, USSR</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Kalashnikov AK‑47 silhouette"><use href="#ak47"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>7.62×39 mm</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈3.5 kg</dd></div>
+                        <div><dt>Action</dt><dd>Gas-operated select-fire</dd></div>
+                    </dl>
+                    <p class="note">Designed in 1947 and adopted in 1949, it became the most widely produced rifle pattern in history.</p>
+                    <a class="inspect" href="#x-ak47"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1950" data-kind="shotgun">
+                <div class="piece-top">
+                    <h3>Remington 870</h3>
+                    <span class="label">Remington Arms, United States</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Remington 870 silhouette"><use href="#r870"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>12 gauge</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈3.6 kg</dd></div>
+                        <div><dt>Action</dt><dd>Pump action</dd></div>
+                    </dl>
+                    <p class="note">Introduced in 1950 and still in production, it is one of the best-selling shotguns ever made.</p>
+                    <a class="inspect" href="#x-r870"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1966" data-kind="smg">
+                <div class="piece-top">
+                    <h3>Heckler &amp; Koch MP5</h3>
+                    <span class="label">Heckler &amp; Koch, West Germany</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Heckler &amp; Koch MP5 silhouette"><use href="#mp5"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>9×19 mm</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈2.5 kg</dd></div>
+                        <div><dt>Action</dt><dd>Roller-delayed blowback</dd></div>
+                    </dl>
+                    <p class="note">Became the defining submachine gun of police and counter-terror units through the 1970s and '80s.</p>
+                    <a class="inspect" href="#x-mp5"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1982" data-kind="pistol">
+                <div class="piece-top">
+                    <h3>Glock 17</h3>
+                    <span class="label">Gaston Glock, Austria</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Glock 17 silhouette"><use href="#g17"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>9×19 mm</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈0.63 kg</dd></div>
+                        <div><dt>Action</dt><dd>Short-recoil semi-auto</dd></div>
+                    </dl>
+                    <p class="note">Adopted by the Austrian Army in 1982; its polymer frame changed how handguns were designed and built.</p>
+                    <a class="inspect" href="#x-g17"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1982" data-kind="rifle">
+                <div class="piece-top">
+                    <h3>Barrett M82</h3>
+                    <span class="label">Ronnie Barrett, United States</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Barrett M82 silhouette"><use href="#m82"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>.50 BMG</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈14 kg</dd></div>
+                        <div><dt>Action</dt><dd>Short-recoil semi-auto</dd></div>
+                    </dl>
+                    <p class="note">Developed in a Tennessee garage in the early 1980s; later adopted by the U.S. military as the M107.</p>
+                    <a class="inspect" href="#x-m82"><span>Inspect</span></a>
+                </div>
+            </article>
+            <article class="piece" data-year="1994" data-kind="rifle">
+                <div class="piece-top">
+                    <h3>Colt M4 Carbine</h3>
+                    <span class="label">Colt, United States</span>
+                </div>
+                <figure class="piece-fig"><svg viewBox="0 0 400 140" role="img" aria-label="Colt M4 Carbine silhouette"><use href="#m4"/></svg></figure>
+                <div>
+                    <dl class="specs">
+                        <div><dt>Caliber</dt><dd>5.56×45 mm NATO</dd></div>
+                        <div><dt>Weight, empty</dt><dd>≈2.9 kg</dd></div>
+                        <div><dt>Action</dt><dd>Gas-operated select-fire</dd></div>
+                    </dl>
+                    <p class="note">A shortened derivative of the M16, adopted by the U.S. military in 1994.</p>
+                    <a class="inspect" href="#x-m4"><span>Inspect</span></a>
+                </div>
+            </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="scale" id="scale">
+        <div class="index-head">
+            <h2>Scale</h2>
+            <div class="metrics" role="radiogroup" aria-label="Compare by">
+                <input type="radio" name="metric" id="m-w" class="sr" checked><label for="m-w" class="chip">Weight</label>
+                <input type="radio" name="metric" id="m-l" class="sr"><label for="m-l" class="chip">Length</label>
+                <input type="radio" name="metric" id="m-y" class="sr"><label for="m-y" class="chip">Year</label>
+            </div>
+        </div>
+        <ol class="bars">
+            <li class="bar" style="--w:7.9;--y:11.0;--l:14.9">
+                <span class="bar-name">Colt M1911</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈1.1 kg</span><span class="bar-val v-y">1911</span><span class="bar-val v-l">≈216 mm</span>
+            </li>
+            <li class="bar" style="--w:25.0;--y:47.0;--l:60.7">
+                <span class="bar-name">Kalashnikov AK‑47</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈3.5 kg</span><span class="bar-val v-y">1947</span><span class="bar-val v-l">≈880 mm</span>
+            </li>
+            <li class="bar" style="--w:25.7;--y:50.0;--l:77.2">
+                <span class="bar-name">Remington 870</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈3.6 kg</span><span class="bar-val v-y">1950</span><span class="bar-val v-l">≈1,000–1,250 mm</span>
+            </li>
+            <li class="bar" style="--w:17.9;--y:66.0;--l:46.9">
+                <span class="bar-name">Heckler &amp; Koch MP5</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈2.5 kg</span><span class="bar-val v-y">1966</span><span class="bar-val v-l">≈680 mm</span>
+            </li>
+            <li class="bar" style="--w:4.5;--y:82.0;--l:14.1">
+                <span class="bar-name">Glock 17</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈0.63 kg</span><span class="bar-val v-y">1982</span><span class="bar-val v-l">≈204 mm</span>
+            </li>
+            <li class="bar" style="--w:100.0;--y:82.0;--l:100.0">
+                <span class="bar-name">Barrett M82</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈14 kg</span><span class="bar-val v-y">1982</span><span class="bar-val v-l">≈1,450 mm</span>
+            </li>
+            <li class="bar" style="--w:20.7;--y:94.0;--l:57.9">
+                <span class="bar-name">Colt M4 Carbine</span>
+                <span class="bar-track"><span class="bar-fill"></span></span>
+                <span class="bar-val v-w">≈2.9 kg</span><span class="bar-val v-y">1994</span><span class="bar-val v-l">≈840 mm</span>
+            </li>
+        </ol>
+    </section>
+
+    <section class="index" id="index">
+        <div class="index-head">
+            <h2>Index</h2>
+            <span class="label">Open any row to inspect it</span>
+        </div>
+        <ol class="index-list">
+            <li><a class="row" href="#x-m1911">
+                <span class="num">01</span>
+                <span class="name">Colt M1911</span>
+                <span class="cal">.45 ACP</span>
+                <span class="origin">United States</span>
+                <span class="yr">1911</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m1911"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-ak47">
+                <span class="num">02</span>
+                <span class="name">Kalashnikov AK‑47</span>
+                <span class="cal">7.62×39 mm</span>
+                <span class="origin">USSR</span>
+                <span class="yr">1947</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#ak47"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-r870">
+                <span class="num">03</span>
+                <span class="name">Remington 870</span>
+                <span class="cal">12 gauge</span>
+                <span class="origin">United States</span>
+                <span class="yr">1950</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#r870"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-mp5">
+                <span class="num">04</span>
+                <span class="name">Heckler &amp; Koch MP5</span>
+                <span class="cal">9×19 mm</span>
+                <span class="origin">West Germany</span>
+                <span class="yr">1966</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#mp5"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-g17">
+                <span class="num">05</span>
+                <span class="name">Glock 17</span>
+                <span class="cal">9×19 mm</span>
+                <span class="origin">Austria</span>
+                <span class="yr">1982</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#g17"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-m82">
+                <span class="num">06</span>
+                <span class="name">Barrett M82</span>
+                <span class="cal">.50 BMG</span>
+                <span class="origin">United States</span>
+                <span class="yr">1982</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m82"/></svg></span>
+            </a></li>
+            <li><a class="row" href="#x-m4">
+                <span class="num">07</span>
+                <span class="name">Colt M4 Carbine</span>
+                <span class="cal">5.56×45 mm NATO</span>
+                <span class="origin">United States</span>
+                <span class="yr">1994</span>
+                <span class="thumb"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m4"/></svg></span>
+            </a></li>
+        </ol>
+    </section>
+
+    <section class="finale" aria-label="End of exhibit">
+        <div class="goo" aria-hidden="true"><span class="drop" style="--x:43%;--s:98px;--d:15s;--delay:-10s;--dx:-68px"></span><span class="drop" style="--x:11%;--s:84px;--d:14s;--delay:-9s;--dx:-66px"></span><span class="drop" style="--x:66%;--s:114px;--d:9s;--delay:-1s;--dx:31px"></span><span class="drop" style="--x:55%;--s:77px;--d:12s;--delay:-1s;--dx:61px"></span><span class="drop" style="--x:56%;--s:75px;--d:10s;--delay:-3s;--dx:80px"></span><span class="drop" style="--x:76%;--s:75px;--d:15s;--delay:-0s;--dx:-24px"></span><span class="drop" style="--x:7%;--s:94px;--d:13s;--delay:-6s;--dx:-44px"></span><span class="drop" style="--x:71%;--s:90px;--d:13s;--delay:-8s;--dx:-34px"></span><span class="drop" style="--x:15%;--s:108px;--d:14s;--delay:-1s;--dx:60px"></span><span class="drop" style="--x:10%;--s:75px;--d:12s;--delay:-7s;--dx:56px"></span><span class="drop" style="--x:56%;--s:140px;--d:16s;--delay:-9s;--dx:36px"></span><span class="drop" style="--x:48%;--s:136px;--d:12s;--delay:-12s;--dx:-34px"></span><span class="drop" style="--x:91%;--s:122px;--d:10s;--delay:-9s;--dx:-4px"></span><span class="drop" style="--x:69%;--s:186px;--d:14s;--delay:-11s;--dx:34px"></span></div>
+        <h2>Fin.</h2>
+    </section>
+
+</main>
+
+<footer class="footer" id="notes">
+    <p class="label">Ordnance is a design concept built with HTML and CSS only.</p>
+    <p class="label">Made in 2026.</p>
+</footer>
+
+<section class="inspector" id="x-m1911" data-kind="pistol" aria-label="Colt M1911 inspector">
+    <input type="checkbox" id="ex-m1911" class="sr t-explode">
+    <input type="checkbox" id="bp-m1911" class="sr t-blue">
+    <input type="checkbox" id="ms-m1911" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">01 / 07, pistol</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Colt M1911</h2>
+        <p class="label">John Browning, United States, 1911</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m1911"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m1911"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m1911"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Grip safety + wood grips</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Slide and frame<br>Recoil-operated semi-auto</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Barrel bushing<br>.45 ACP</b></span>
+        <span class="dim"><em>Overall length ≈216 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-m1911" class="toggle">Explode</label>
+            <label for="bp-m1911" class="toggle">Blueprint</label>
+            <label for="ms-m1911" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Adopted by the U.S. Army in 1911 and kept as its standard sidearm until 1985, more than seventy years in service.</p>
+        <a class="next" href="#x-ak47"><span class="label">Next</span>Kalashnikov AK‑47</a>
+    </div>
+</section>
+<section class="inspector" id="x-ak47" data-kind="rifle" aria-label="Kalashnikov AK‑47 inspector">
+    <input type="checkbox" id="ex-ak47" class="sr t-explode">
+    <input type="checkbox" id="bp-ak47" class="sr t-blue">
+    <input type="checkbox" id="ms-ak47" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">02 / 07, rifle</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Kalashnikov AK‑47</h2>
+        <p class="label">Mikhail Kalashnikov, USSR, 1947</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#ak47"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#ak47"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#ak47"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Wooden buttstock</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Stamped/milled receiver<br>Gas-operated select-fire</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Gas tube and front sight<br>7.62×39 mm</b></span>
+        <span class="dim"><em>Overall length ≈880 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-ak47" class="toggle">Explode</label>
+            <label for="bp-ak47" class="toggle">Blueprint</label>
+            <label for="ms-ak47" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Designed in 1947 and adopted in 1949, it became the most widely produced rifle pattern in history.</p>
+        <a class="next" href="#x-r870"><span class="label">Next</span>Remington 870</a>
+    </div>
+</section>
+<section class="inspector" id="x-r870" data-kind="shotgun" aria-label="Remington 870 inspector">
+    <input type="checkbox" id="ex-r870" class="sr t-explode">
+    <input type="checkbox" id="bp-r870" class="sr t-blue">
+    <input type="checkbox" id="ms-r870" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">03 / 07, shotgun</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Remington 870</h2>
+        <p class="label">Remington Arms, United States, 1950</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#r870"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#r870"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#r870"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Stock</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Steel receiver<br>Pump action</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Pump forend and tube magazine<br>12 gauge</b></span>
+        <span class="dim"><em>Overall length ≈1,000–1,250 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-r870" class="toggle">Explode</label>
+            <label for="bp-r870" class="toggle">Blueprint</label>
+            <label for="ms-r870" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Introduced in 1950 and still in production, it is one of the best-selling shotguns ever made.</p>
+        <a class="next" href="#x-mp5"><span class="label">Next</span>Heckler &amp; Koch MP5</a>
+    </div>
+</section>
+<section class="inspector" id="x-mp5" data-kind="smg" aria-label="Heckler &amp; Koch MP5 inspector">
+    <input type="checkbox" id="ex-mp5" class="sr t-explode">
+    <input type="checkbox" id="bp-mp5" class="sr t-blue">
+    <input type="checkbox" id="ms-mp5" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">04 / 07, submachine gun</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Heckler &amp; Koch MP5</h2>
+        <p class="label">Heckler &amp; Koch, West Germany, 1966</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#mp5"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#mp5"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#mp5"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Retractable stock</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Receiver with drum sight<br>Roller-delayed blowback</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Handguard and hooded front sight<br>9×19 mm</b></span>
+        <span class="dim"><em>Overall length ≈680 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-mp5" class="toggle">Explode</label>
+            <label for="bp-mp5" class="toggle">Blueprint</label>
+            <label for="ms-mp5" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Became the defining submachine gun of police and counter-terror units through the 1970s and '80s.</p>
+        <a class="next" href="#x-g17"><span class="label">Next</span>Glock 17</a>
+    </div>
+</section>
+<section class="inspector" id="x-g17" data-kind="pistol" aria-label="Glock 17 inspector">
+    <input type="checkbox" id="ex-g17" class="sr t-explode">
+    <input type="checkbox" id="bp-g17" class="sr t-blue">
+    <input type="checkbox" id="ms-g17" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">05 / 07, pistol</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Glock 17</h2>
+        <p class="label">Gaston Glock, Austria, 1982</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#g17"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#g17"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#g17"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Polymer grip frame</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Slide<br>Short-recoil semi-auto</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Muzzle end<br>9×19 mm</b></span>
+        <span class="dim"><em>Overall length ≈204 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-g17" class="toggle">Explode</label>
+            <label for="bp-g17" class="toggle">Blueprint</label>
+            <label for="ms-g17" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Adopted by the Austrian Army in 1982; its polymer frame changed how handguns were designed and built.</p>
+        <a class="next" href="#x-m82"><span class="label">Next</span>Barrett M82</a>
+    </div>
+</section>
+<section class="inspector" id="x-m82" data-kind="rifle" aria-label="Barrett M82 inspector">
+    <input type="checkbox" id="ex-m82" class="sr t-explode">
+    <input type="checkbox" id="bp-m82" class="sr t-blue">
+    <input type="checkbox" id="ms-m82" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">06 / 07, rifle</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Barrett M82</h2>
+        <p class="label">Ronnie Barrett, United States, 1982</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m82"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m82"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m82"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Stock and monopod</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Receiver and optic<br>Short-recoil semi-auto</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Barrel, muzzle brake, bipod<br>.50 BMG</b></span>
+        <span class="dim"><em>Overall length ≈1,450 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-m82" class="toggle">Explode</label>
+            <label for="bp-m82" class="toggle">Blueprint</label>
+            <label for="ms-m82" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">Developed in a Tennessee garage in the early 1980s; later adopted by the U.S. military as the M107.</p>
+        <a class="next" href="#x-m4"><span class="label">Next</span>Colt M4 Carbine</a>
+    </div>
+</section>
+<section class="inspector" id="x-m4" data-kind="rifle" aria-label="Colt M4 Carbine inspector">
+    <input type="checkbox" id="ex-m4" class="sr t-explode">
+    <input type="checkbox" id="bp-m4" class="sr t-blue">
+    <input type="checkbox" id="ms-m4" class="sr t-measure">
+    <div class="ins-head">
+        <span class="label">07 / 07, rifle</span>
+        <a href="#_" class="close" aria-label="Close inspector"><span></span></a>
+    </div>
+    <div class="ins-title">
+        <h2>Colt M4 Carbine</h2>
+        <p class="label">Colt, United States, 1994</p>
+    </div>
+    <div class="stage">
+      <div class="fig">
+        <div class="slice s1"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m4"/></svg></div><div class="slice s2"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m4"/></svg></div><div class="slice s3"><svg viewBox="0 0 400 140" aria-hidden="true"><use href="#m4"/></svg></div>
+        <span class="hot h1" tabindex="0"><i></i><b>Telescoping stock</b></span>
+        <span class="hot h2" tabindex="0"><i></i><b>Upper and lower receiver<br>Gas-operated select-fire</b></span>
+        <span class="hot h3" tabindex="0"><i></i><b>Handguard and front sight<br>5.56×45 mm NATO</b></span>
+        <span class="dim"><em>Overall length ≈840 mm</em></span>
+      </div>
+        <span class="scan" aria-hidden="true"></span>
+    </div>
+    <div class="ins-foot">
+        <div class="toggles">
+            <label for="ex-m4" class="toggle">Explode</label>
+            <label for="bp-m4" class="toggle">Blueprint</label>
+            <label for="ms-m4" class="toggle">Measure</label>
+        </div>
+        <p class="ins-note">A shortened derivative of the M16, adopted by the U.S. military in 1994.</p>
+        <a class="next" href="#x-m1911"><span class="label">Next</span>Colt M1911</a>
+    </div>
+</section>
+
+</body>
+</html>
